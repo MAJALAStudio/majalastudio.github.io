@@ -1,73 +1,36 @@
-# Welcome to your Lovable project
+# MAJALA Studio - Static Site
 
-## Project info
+This project has been converted from a React application to a static HTML/Tailwind CSS project.
 
-**URL**: https://lovable.dev/projects/6d031c9c-212d-4265-bfe9-fc1bf54b99b1
+## Structure
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/6d031c9c-212d-4265-bfe9-fc1bf54b99b1) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+/assets
+  /css
+    style.css    (Generated/Compiled Tailwind CSS)
+    input.css    (Source CSS with custom layers)
+  /js
+    main.js      (Client-side logic & Icon initialization)
+  /img           (Static assets: images, icons, etc.)
+index.html       (Main entry point)
+tailwind.config.js (Tailwind configuration)
 ```
 
-**Edit a file directly in GitHub**
+## Features
+- **Static HTML**: Blazing fast load times with no client-side framework overhead.
+- **Tailwind CSS**: Utility-first styling with a custom design system.
+- **Lucide Icons**: Dynamic icon loading via CDN.
+- **Interactive Apps Grid**: Filtering functionality implemented in vanilla JavaScript.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Maintenance
 
-**Use GitHub Codespaces**
+### Updating Styles
+If you need to change Tailwind classes:
+1. Ensure you have Node.js installed.
+2. Run the following command from the root directory:
+   ```bash
+   npx tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify
+   ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6d031c9c-212d-4265-bfe9-fc1bf54b99b1) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Adding Images
+Place new images in `assets/img/` and reference them in `index.html` as `assets/img/filename`.
